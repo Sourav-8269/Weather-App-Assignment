@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { Search2Icon } from "@chakra-ui/icons";
 import { BiCurrentLocation } from "react-icons/bi";
+import "../App.css";
 
 const Navbar = () => {
   return (

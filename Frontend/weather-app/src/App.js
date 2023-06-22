@@ -3,6 +3,8 @@ import './App.css';
 import {useEffect} from "react";
 import axios from "axios"
 import Navbar from './components/Navbar';
+import CurrentWeather from './components/CurrentWeather';
+import Home from './components/Home';
 
 function App() {
   useEffect(() => {
@@ -13,9 +15,8 @@ function App() {
   }, []);
   return (
     <div className="App">
-      {/* <header className="App-header"> */}
         <Navbar/>
-      {/* </header> */}
+        <Home/>
     </div>
   );
 }
