@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Box, Text, HStack } from "@chakra-ui/react";
 import { IoLocationOutline } from "react-icons/io5";
-import Sun from "./weatherIcons/01d.png";
 import { CalendarIcon } from "@chakra-ui/icons";
 import "../styles/current.css";
 import { useEffect } from "react";
@@ -71,7 +70,6 @@ const CurrentWeather = ({userInput}) => {
           <HStack id="wrapper">
             {main&&<p id="temperature">{Math.round(main.temp)}&deg;c</p>}
             {icon&&<img src={getIcon(icon)} alt="Sun" />}
-            {!icon&&<img src={Sun} alt="Sun" />}
           </HStack>
           {weather&&<Text>{weather.description.charAt(0).toUpperCase()+weather.description.slice(1)}</Text>}
           <hr />
