@@ -23,3 +23,11 @@ hr{
     /* border: 1px solid red; */
     margin: 10px 0 10px 0;
 }
+#error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    height: 80vh;
+    flex-direction: column;
+}

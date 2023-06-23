@@ -1,22 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-import {useEffect} from "react";
-import axios from "axios"
+import {useEffect, useState} from "react";
 import Navbar from './components/Navbar';
-import CurrentWeather from './components/CurrentWeather';
 import Home from './components/Home';
 
 function App() {
-  // useEffect(() => {
-  //   axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=40.7127281&lon=-74.0060152&units=metric&appid=19e5bb78eb85f21fbfcbcde9f026af1e`)
-  //   // axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=london&limit=5&units=metric&appid=19e5bb78eb85f21fbfcbcde9f026af1e`)
-  //   .then((res)=>console.log(res))
-  //   .catch((err)=>console.log(err))
-  // }, []);
+  const [userInput, setUserInput] = useState('');
+
+  const handleUserInput = (input) => {
+    setUserInput(input);
+  };
+
   return (
     <div className="App">
-        <Navbar/>
-        <Home/>
+        <Navbar onUserInput={handleUserInput}/>
+        <Home userInput={userInput}/>
     </div>
   );
 }

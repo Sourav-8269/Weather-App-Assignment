@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/navbar.css";
 import {
-  Box,
   Button,
   IconButton,
   Input,
@@ -12,8 +11,16 @@ import {
 import { Search2Icon } from "@chakra-ui/icons";
 import { BiCurrentLocation } from "react-icons/bi";
 import "../App.css";
+import { useState,useEffect } from "react";
+import {useThrottle} from "use-throttle"
 
-const Navbar = () => {
+const Navbar = ({onUserInput}) => {
+  const [input,setInput]=useState("");
+  const throttleText=useThrottle(input,1000);
+
+  useEffect(() => {
+    onUserInput(throttleText);
+ }, [throttleText,onUserInput]);
   return (
     <div className="navbar">
       <div id="logo">
@@ -28,6 +35,8 @@ const Navbar = () => {
           </InputLeftElement>
           <Input
             // htmlSize={40}
+            value={input}
+            onChange={(e)=>setInput(e.target.value)}
             type="tel"
             placeholder="Enter your location"
             id="input"
@@ -42,6 +51,7 @@ const Navbar = () => {
           borderRadius="30px"
           leftIcon={<BiCurrentLocation size={25} />}
           colorScheme="messenger"
+          onClick={()=>window.location.reload()}
         >
           Current Location
         </Button>
@@ -56,6 +66,7 @@ const Navbar = () => {
           justifyContent="center"
           colorScheme='blue'
           p={2}
+          onClick={()=>window.location.reload()}
         >
           <BiCurrentLocation size={25} alignmentBaseline="center" />
         </IconButton>
