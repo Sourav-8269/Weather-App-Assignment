@@ -39,7 +39,6 @@ const Navbar = () => {
       <div id="location">
         <Button
           display={{ base: "none", md: "flex" }}
-          borderBox="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
           borderRadius="30px"
           leftIcon={<BiCurrentLocation size={25} />}
           colorScheme="messenger"
