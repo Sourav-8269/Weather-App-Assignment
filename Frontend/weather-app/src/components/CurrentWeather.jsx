@@ -75,20 +75,21 @@ const CurrentWeather = ({userInput}) => {
           </HStack>
           {weather&&<Text>{weather.description.charAt(0).toUpperCase()+weather.description.slice(1)}</Text>}
           <hr />
-          <HStack style={{ textAlign: "left", marginLeft: "3px" }}>
+          <HStack style={{ textAlign: "left", marginLeft: "3px",marginTop:"5px" }}>
             <CalendarIcon />
             {/* <Text>Thursday 16, Feb</Text> */}
             {today&&<Text>{today}</Text>}
           </HStack>
-          <HStack style={{ textAlign: "left" }}>
+          <HStack style={{ textAlign: "left",marginTop:"5px"  }}>
             <IoLocationOutline color="#fff" size={23} />
             {name&&<Text>{name}</Text>}
           </HStack>
         </div>
       </section>
       <section id="forecast">
-        <Text id="heading">5 Days Forecast</Text>
-        {forecast&&<div id="card">
+        <div id="card">
+        <Text id="heading" color="white" >5 Days Forecast</Text>
+        {forecast&&<div >
           {forecast.map((el,index)=>(
              <HStack id="wrapper" key={index}>
              <Box style={{ display: "flex", alignItems: "center", gap: "10px" }}>
@@ -100,6 +101,7 @@ const CurrentWeather = ({userInput}) => {
            </HStack>
           ))}
         </div>}
+        </div>
       </section>
     </div>
   );

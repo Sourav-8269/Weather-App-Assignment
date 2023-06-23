@@ -1,11 +1,19 @@
+#main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 #card{
     background-color:  #1D1C1F;
     color: #DDDAE5;
     border-radius: 28px;
     padding: 20px;
-    max-width: 400px;
+    width: 450px;
+    /* max-width: 400px; */
      /* border: 1px solid red; */
     margin: 3% 0 3% 0;
+    height: 350px;
     /* cursor: not-allowed; */
 }
 #temperature{
@@ -31,3 +39,23 @@ hr{
     height: 80vh;
     flex-direction: column;
 }
+
+@media all and (min-width: 950px) and (max-width: 1100px) {
+    #card{
+        width: 400px;
+    }
+}
+@media all and (min-width: 500px) and (max-width: 950px) {
+   #main{
+    flex-direction: column;
+   }
+}
+@media all and (max-width: 500px) {
+    #main{
+     flex-direction: column;
+    }
+    #card{
+        max-width: 330px;
+    }
+
+ }
