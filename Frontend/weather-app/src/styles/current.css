@@ -11,10 +11,37 @@
     padding: 20px;
     width: 450px;
     /* max-width: 400px; */
-     /* border: 1px solid red; */
     margin: 3% 0 3% 0;
     height: 350px;
-    /* cursor: not-allowed; */
+}
+#long-card{
+    /* background-color:  #1D1C1F; */
+    color: #DDDAE5;
+    border-radius: 28px;
+    padding: 20px;
+    /* max-width: 400px; */
+     /* border: 1px solid red; */
+    margin: 3% 0 3% 0;
+}
+#highlights{
+    width: 90%;
+    /* border: 1px solid red; */
+    margin: auto;
+}
+#humidity{
+    font-size: 30px;
+}
+#long-card{
+    display: flex;
+    /* border: 1px solid red; */
+    justify-content: space-around;
+}
+#short-card{
+    background-color:  #2b2a2e;
+    padding: 30px;
+    background-color:  #1D1C1F;
+    border-radius: 28px;
+    width: 30%;
 }
 #temperature{
     font-size: 5.6rem;
@@ -44,11 +71,28 @@ hr{
     #card{
         width: 400px;
     }
+    #highlights{
+        width: 100%;    
+    }
 }
 @media all and (min-width: 500px) and (max-width: 950px) {
    #main{
     flex-direction: column;
    }
+   #long-card{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;  
+
+        gap: 20px;  
+    }
+    #short-card{
+        width: 450px;    
+    }
+    
+    #highlights{
+        width: 100%;    
+    }
 }
 @media all and (max-width: 500px) {
     #main{
@@ -56,6 +100,20 @@ hr{
     }
     #card{
         max-width: 330px;
+    }
+    #long-card{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;  
+
+        gap: 20px;  
+    }
+    #short-card{
+        width: 330px;    
+    }
+    
+    #highlights{
+        width: 100%;    
     }
 
  }

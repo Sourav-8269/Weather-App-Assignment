@@ -19,11 +19,11 @@ function getCurrentLocation() {
 
 getCurrentLocation()
   .then(({ latitude, longitude }) => {
-    console.log("Latitude:", latitude);
-    console.log("Longitude:", longitude);
+    // console.log("Latitude:", latitude);
+    // console.log("Longitude:", longitude);
   })
   .catch((error) => {
-    console.log("Error occurred:", error);
+    // console.log("Error occurred:", error);
   });
 
 // Below function is to get weather of current location.

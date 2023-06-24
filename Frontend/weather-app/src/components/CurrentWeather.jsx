@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { Box, Text, HStack } from "@chakra-ui/react";
 import { IoLocationOutline } from "react-icons/io5";
-import { CalendarIcon } from "@chakra-ui/icons";
+import { CalendarIcon, RepeatIcon, ViewIcon } from "@chakra-ui/icons";
 import "../styles/current.css";
 import { useEffect } from "react";
 import {getDate, getIcon, getWeatherBySearch, weatherForecast,currentWeather } from "./allApi";
+import {WiHumidity} from "react-icons/wi"
 
 const CurrentWeather = ({userInput}) => {
   const [weather,setWeather]=useState(null);
   const [name,setName]=useState("");
   const [main,setMain]=useState(null);
   const [today,setToday]=useState("");
+  const [visibility,setvisibility]=useState("");
   const [icon,setIcon]=useState("");
   const [forecast,setForecast]=useState(null);
   const [loading,setLoading]=useState(true)
@@ -25,6 +27,7 @@ const CurrentWeather = ({userInput}) => {
         setMain(res.data.main)
         setToday(getDate(res.data.dt))
         setIcon(res.data.weather[0].icon);
+        setvisibility(res.data.visibility)
       })
       .catch((err)=>{
         setLoading(true)
@@ -44,6 +47,7 @@ const CurrentWeather = ({userInput}) => {
         setMain(res.data.main)
         setToday(getDate(res.data.dt))
         setIcon(res.data.weather[0].icon);
+        setvisibility(res.data.visibility)
       })
       .catch((err)=>{
         setLoading(true)
@@ -63,6 +67,7 @@ const CurrentWeather = ({userInput}) => {
   }
 
   return (
+    <div>
     <div id="main">
       <section id="current-weather">
         <div id="card">
@@ -100,6 +105,32 @@ const CurrentWeather = ({userInput}) => {
           ))}
         </div>}
         </div>
+      </section>
+    </div>
+      <section id="highlights">
+            <div id="long-card">
+              <div id="short-card">
+                  <Text>Humidity</Text>
+                    <HStack id="wrapper">
+                      <WiHumidity size={50} />
+                      {main&&<p id="humidity">{Math.round(main.humidity)} %</p>}
+                    </HStack>
+              </div>
+              <div id="short-card">
+                  <Text>Pressure</Text>
+                    <HStack id="wrapper"  >
+                      <RepeatIcon boxSize={38} />
+                      {main&&<p id="humidity">{Math.round(main.pressure)} hPa</p>}
+                    </HStack>
+              </div>
+              <div id="short-card">
+                  <Text>Visibility</Text>
+                    <HStack id="wrapper">
+                      <ViewIcon boxSize={42}/>
+                      {visibility&&<p id="humidity">{Math.round(visibility/1000)} km</p>}
+                    </HStack>
+              </div>
+            </div>
       </section>
     </div>
   );
