@@ -4,7 +4,7 @@
 
 This README file provides instructions on how to set up and run the Weather App locally on your machine.
 
-Frontend Deployed Link: https://weather-app-sage-gamma.vercel.app/
+Frontend Deployed Link: https://weather-app-sourav-8269.vercel.app/
 
 ## Prerequisites
 
