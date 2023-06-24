@@ -37,7 +37,6 @@ const Navbar = ({onUserInput}) => {
             // htmlSize={40}
             value={input}
             onChange={(e)=>setInput(e.target.value)}
-            type="tel"
             placeholder="Enter your location"
             id="input"
             bg="#3f49c026"
